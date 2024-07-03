@@ -2,7 +2,7 @@
 // “Hello, World!” Example: https://learn-code.wix.com/en/article/hello-world
 
 $w.onReady(function () {
-    // Write your JavaScript here
+    // hello this is a test 
 
     // To select an element by ID use: $w('#elementID')
 
