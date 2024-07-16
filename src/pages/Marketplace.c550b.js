@@ -17,14 +17,12 @@ const DATASET_ID = 'dataset1';
 const TABLE_ID = 'table1';
 
 // Create search bar and filter elements
-const searchBar = $w('#searchBar');
-const priceMinInput = $w('#priceMinInput');
-const priceMaxInput = $w('#priceMaxInput');
-const timeLeftMinInput = $w('#timeLeftMinInput');
-const timeLeftMaxInput = $w('#timeLeftMaxInput');
-const auctionOrBuyNowDropdown = $w('#auctionOrBuyNowDropdown');
-const extensionDropdown = $w('#extensionDropdown');
-const applyFiltersButton = $w('#applyFiltersButton');
+const searchBar = $w('#input1');
+const priceMinInput = $w('#input2');
+const priceMaxInput = $w('#input3');
+const auctionOrBuyNowDropdown = $w('#dropdown2');
+const extensionDropdown = $w('#dropdown1');
+const applyFiltersButton = $w('#button1');
 
 // Create table element
 const table = $w(`#${TABLE_ID}`);
@@ -149,7 +147,7 @@ async function addDataAndGetAffiliateLink(domainName) {
 async function checkIfDomainIsSold(domainName) {
   try {
     const godaddyData = await getGodaddyData(domainName);
-    if (godaddyData.status === 'old' || godaddyData.status === 'unavailable') {
+    if (godaddyData.status === 'sold' || godaddyData.status === 'unavailable') {
       await deleteSoldDomain(domainName);
     }
   } catch (error) {
